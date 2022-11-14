@@ -28,6 +28,12 @@ const CONFIG = {
     de: { ietf: 'de-DE', tk: 'hah7vzn.css' },
     kr: { ietf: 'ko-KR', tk: 'zfo3ouc' },
   },
+  stage: {
+    edgeConfigId: '0136c98e-baaf-49b2-b0ca-dd3e7dac52cf'
+  },
+  prod: {
+    edgeConfigId: 'af895269-f192-4a3c-b8c0-24c4f3b54486'
+  },
 };
 
 // Default to loading the first image as eager.
