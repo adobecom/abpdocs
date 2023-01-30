@@ -23,16 +23,12 @@ const CONFIG = {
   // codeRoot: '',
   // contentRoot: '',
   // imsClientId: 'college',
+  // geoRouting: 'off',
+  // fallbackRouting: 'off',
   locales: {
     '': { ietf: 'en-US', tk: 'hah7vzn.css' },
     de: { ietf: 'de-DE', tk: 'hah7vzn.css' },
     kr: { ietf: 'ko-KR', tk: 'zfo3ouc' },
-  },
-  stage: {
-    edgeConfigId: '0136c98e-baaf-49b2-b0ca-dd3e7dac52cf'
-  },
-  prod: {
-    edgeConfigId: 'af895269-f192-4a3c-b8c0-24c4f3b54486'
   },
 };
 
@@ -68,3 +64,20 @@ const { loadArea, loadDelayed, setConfig } = await import(`${miloLibs}/utils/uti
   await loadArea();
   loadDelayed();
 }());
+
+
+
+/*
+ * utils
+ */
+
+/**
+ * Sanitizes a name for use as class name.
+ * @param {*} name The unsanitized name
+ * @returns {string} The class name
+ */
+export function toClassName(name) {
+  return name && typeof name === 'string'
+    ? name.toLowerCase().replace(/[^0-9a-z]/gi, '-')
+    : '';
+}
