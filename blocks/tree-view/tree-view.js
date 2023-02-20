@@ -166,9 +166,13 @@ const init = async (el) => {
       topListItem.setAttribute('aria-haspopup', 'menu');
       topListItem.setAttribute('aria-expanded', false);
 
-      const label = topListItem.textContent.split('\n')[0];
-      const id = label.trim().replaceAll(' ', '-');
-      const button = createTag('button', { id }, label);
+      let content = topListItem.textContent.split('\n')[0];
+      let id = content.trim().replaceAll(' ', '-');
+      if (topListItem.querySelector(':scope > a')) {
+        content = topListItem.querySelector(':scope > a').outerHTML;
+        id = topListItem.querySelector(':scope > a').textContent;
+      }
+      const button = createTag('button', { id }, content);
       const subList = topListItem.querySelector('ul');
 
       topListItem.innerHTML = '';

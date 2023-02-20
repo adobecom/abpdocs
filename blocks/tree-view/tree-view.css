@@ -36,6 +36,10 @@
   box-sizing: content-box;
 }
 
+.tree-view button > a {
+  display: contents;
+}
+
 .tree-view a {
   display: block;
   color: var(--text-color);
