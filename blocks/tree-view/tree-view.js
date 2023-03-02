@@ -129,8 +129,8 @@ const init = async (el) => {
 
   el.append(nav);
   el.classList.add(`${isAccordion ? 'accordion' : 'simple'}`);
-  topList.classList.add('top-list', 'body-S');
-  title?.classList.add('title', 'heading-XS');
+  topList.classList.add('top-list', 'body-s');
+  title?.classList.add('title', 'heading-xs');
 
   if (currentLinks.length === 1) { currentLinks[0].classList.add('current-page'); }
 
