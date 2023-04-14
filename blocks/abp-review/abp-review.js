@@ -68,7 +68,7 @@ const App = ({ rootEl, strings }) => html`
       commentThreshold=${COMMENT_THRESHOLD}
       hideTitleOnReload=${strings.hideTitleOnReload}
       lang=${getPageLocale()}
-      reviewTitle='sekhar'
+      reviewTitle=${strings.reviewTitle}
       productJson=${getProductJson()}
       strings=${strings}
       tooltipDelay=${strings.tooltipdelay}
@@ -79,6 +79,7 @@ const App = ({ rootEl, strings }) => html`
       onRatingSet=${({ rating, comment }) => {}}
       onRatingHover=${({ rating }) => {}}
       onReviewLoad=${({ hasRated, rating }) => {}}
+      goodRatingPlaceholder=${strings.goodRatingPlaceholder}
     />
   `;
 
@@ -98,8 +99,8 @@ const getStrings = (metaData) => {
     hidetitle,
     reviewurl,
     initialvalue,
+    above3ratingplaceholder,
   } = metaData;
-
   return {
     commentLabel: commentfieldlabel,
     sendCta: submittext,
@@ -115,6 +116,7 @@ const getStrings = (metaData) => {
     tooltips: tooltips && tooltips.split(',').map((t) => t.trim()),
     postUrl: reviewurl,
     initialValue: initialvalue,
+    goodRatingPlaceholder: above3ratingplaceholder,
   };
 };
 

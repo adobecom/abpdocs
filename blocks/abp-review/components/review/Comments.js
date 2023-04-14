@@ -11,6 +11,8 @@ function Comments({
   handleCommentChange,
   placeholderText,
   sendCtaText,
+  goodRatingPlaceholder,
+  rating,
 }) {
   const maxLength = 500;
   const [hasComment, setHasComment] = useState(false);
@@ -68,7 +70,7 @@ function Comments({
         maxlength=${maxLength}
         name="rating-comments"
         aria-label=${label}
-        placeholder=${placeholderText}
+        placeholder=${rating > 3 ? goodRatingPlaceholder : placeholderText}
         onInput=${onCommentChange}
         onFocus=${onFocus}
         value=${comment}

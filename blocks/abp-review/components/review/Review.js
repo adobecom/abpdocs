@@ -55,7 +55,6 @@ function Review({
   const [rating, setRating] = useState(0);
   const [selectedRating, setSelectedRating] = useState(0);
   const [timeoutId, setTimeoutId] = useState(null);
-  console.log('commentThreshold  here ', commentThreshold);
 
   const beforeUnloadCallback = useRef(null);
 
@@ -141,7 +140,6 @@ function Review({
       addToAverage(newRating, Number(averageRating), updatedTotalReviews),
     );
 
-    console.log('commentThreshold  newRating ', commentThreshold, newRating);
     if (
       !isKeyboardSelection
       && newRating > commentThreshold
@@ -207,6 +205,8 @@ function Review({
       handleCommentChange=${handleCommentChange}
       placeholderText=${strings.placeholder}
       sendCtaText=${strings.sendCta}
+      goodRatingPlaceholder=${strings.goodRatingPlaceholder}
+      rating=${rating}
     />
   `;
 

@@ -24,6 +24,7 @@ const HelixReview = ({
   tooltipDelay = 300,
   visitorId,
   initialValue,
+  goodRatingPlaceholder,
 }) => {
   const [rating, setRating] = useState();
   const [initialRating, setInitialRating] = useState();
@@ -31,7 +32,6 @@ const HelixReview = ({
   const [totalReviews, setTotalReviews] = useState(0);
   const [displayRatingSummary, setDisplayRatingSummary] = useState(false);
   const [displayReviewComp, setDisplayReviewComp] = useState(false);
-  console.log('commentThreshold HelixReview here ', commentThreshold);
  
   useEffect(() => {
     // init
