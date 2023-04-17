@@ -141,7 +141,7 @@
 }
 
 .hlx-Review-commentFields textarea#rating-comments {
-  width: 310px;
+  width: 450px;
   height: var(--ratingCommentsHeight);
   border: none;
   outline: none;
