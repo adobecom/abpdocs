@@ -54,7 +54,7 @@ function Comments({
   }
 
   const disabledElement = html`
-    <input disabled=${!hasComment} type="submit" value=${sendCtaText} />
+    <input type="submit" value=${sendCtaText} />
   `;
 
   const charCountElement = html`
@@ -79,7 +79,7 @@ function Comments({
         <div id="ctaCover" onClick=${onCtaCoverClick}>
           ${charCountElement}
         </div>
-        ${displaySend && disabledElement}
+        ${disabledElement}
     </fieldset>
   `;
 }

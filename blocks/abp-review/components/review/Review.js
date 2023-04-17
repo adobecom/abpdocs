@@ -36,7 +36,6 @@ function Review({
   displayRatingSummary = true,
   hideTitleOnReload,
   tooltipDelay = 300,
-  initialRating,
   maxRating = 5,
   onRatingSet = noop,
   onRatingHover = noop,
@@ -65,12 +64,6 @@ function Review({
       if (hideTitleOnReload !== 'false') setDisplayTitle(false);
     }
   }, [staticRating]);
-
-  useEffect(() => {
-    if (initialRating) {
-      setRating(initialRating);
-    }
-  }, [initialRating]);
 
   const handleCommentChange = (commentText) => {
     setComment(commentText);

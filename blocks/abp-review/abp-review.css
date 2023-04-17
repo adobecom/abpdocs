@@ -127,14 +127,7 @@
   font-size: 16px;
   text-align: right;
   padding: 1px 10px;
-}
-
-.hlx-Review-commentFields input[type='submit'][disabled] {
-  color: var(--sendDisabledColor);
-}
-
-.hlx-Review-commentFields input[type='submit']:not([disabled]):hover {
-  color: var(--sendHoverColor);
+  cursor: pointer;
 }
 
 .hlx-Review-commentFields #ctaCover {
