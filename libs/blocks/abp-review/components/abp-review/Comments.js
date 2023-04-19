@@ -3,7 +3,7 @@ import {
   useState,
   useRef,
   html,
-} from '../../htm-preact.js';
+} from '../../../../deps/htm-preact.js';
 
 function Comments({
   label,
@@ -15,8 +15,6 @@ function Comments({
   rating,
 }) {
   const maxLength = 500;
-  const [hasComment, setHasComment] = useState(false);
-  const [displaySend, setDisplaySend] = useState(false);
   const [hasFocus, setHasFocus] = useState(false);
   const [charCount, setCharCount] = useState(maxLength);
 
@@ -29,7 +27,6 @@ function Comments({
 
   const onCommentChange = (e) => {
     const { value } = e.target;
-    setHasComment(!!value);
     setCharCount(maxLength - value.length);
     if (handleCommentChange) {
       handleCommentChange(value);
@@ -37,12 +34,10 @@ function Comments({
   };
 
   const onBlur = (e) => {
-    setDisplaySend(!!e.target.value);
     setHasFocus(false);
   };
 
   const onFocus = () => {
-    setDisplaySend(true);
     setHasFocus(true);
   };
 

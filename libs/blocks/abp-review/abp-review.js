@@ -1,4 +1,4 @@
-import { html, render } from './htm-preact.js';
+import { html, render } from '../../deps/htm-preact.js';
 
 import HelixReview from './components/helixReview/HelixReview.js';
 

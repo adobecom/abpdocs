@@ -1,7 +1,7 @@
-import { useState, html } from '../../htm-preact.js';
+import { useState, html } from '../../../../deps/htm-preact.js';
 
 import sendHelixData from '../../utils/sendHelixData.js';
-import Review from '../review/Review.js';
+import Review from '../abp-review/Review.js';
 
 const HelixReview = ({
   clickTimeout = 5000,

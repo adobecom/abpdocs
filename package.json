@@ -4,8 +4,9 @@
   "version": "1.0.0",
   "description": "Website foundation technology.",
   "scripts": {
-    "test": "wtr \"./test/**/*.test.js\" --node-resolve --port=2000 --coverage",
+    "test": "wtr --config ./web-test-runner.config.mjs \"./test/**/*.test.(js|html)\" --node-resolve --port=2000 --coverage --concurrent-browsers 4",
     "test:watch": "npm test -- --watch",
+    "test:file": "wtr --config ./web-test-runner.config.mjs --node-resolve --port=2000 --coverage",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint .",
     "lint:css": "stylelint 'blocks/**/*.css' 'styles/*.css'"
@@ -20,6 +21,11 @@
     "url": "https://github.com/adobecom/college/issues"
   },
   "homepage": "https://github.com/adobecom/college#readme",
+  "dependencies": {
+    "htm": "^3.1.1",
+    "preact": "^10.11.0",
+    "@preact/signals": "1.0.4"
+  },
   "devDependencies": {
     "@babel/core": "7.17.7",
     "@babel/eslint-parser": "7.17.0",
@@ -30,13 +36,15 @@
     "chai": "4.3.6",
     "eslint": "8.11.0",
     "eslint-config-airbnb-base": "15.0.0",
+    "eslint-plugin-chai-friendly": "^0.7.2",
+    "eslint-plugin-compat": "^4.0.2",
+    "eslint-plugin-ecmalist": "^1.0.8",
     "eslint-plugin-import": "2.25.4",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "microbundle": "0.15.1",
     "sinon": "13.0.1",
     "stylelint": "14.6.0",
     "stylelint-config-prettier": "9.0.3",
-    "stylelint-config-standard": "25.0.0",
-    "htm": "^3.1.1",
-    "preact": "^10.11.0",
-    "@preact/signals": "1.0.4"
+    "stylelint-config-standard": "25.0.0"
   }
 }

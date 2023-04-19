@@ -1,4 +1,4 @@
-import { useEffect, useState, html } from '../../htm-preact.js';
+import { useEffect, useState, html } from '../../../../deps/htm-preact.js';
 
 import RatingInput from './RatingInput.js';
 import useHover from '../../useHover.js';
