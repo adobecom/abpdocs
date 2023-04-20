@@ -1,5 +1,5 @@
 import { expect } from '@esm-bundle/chai';
-import setJsonLdProductInfo from '../../../../libs/blocks/abp-review/utils/setJsonLdProductInfo.js';
+import setJsonLdProductInfo from '../../../../blocks/abp-review/utils/setJsonLdProductInfo.js';
 
 describe('setJsonLdProductInfo Util', () => {
   it('could set header', () => {

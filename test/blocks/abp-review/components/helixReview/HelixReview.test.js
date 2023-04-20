@@ -1,8 +1,8 @@
 import { expect } from '@esm-bundle/chai';
-import { html, render } from '../../../../../libs/deps/htm-preact.js';
+import { html, render } from '../../../../../deps/htm-preact.js';
 import { waitForElement, delay } from '../../../../helpers/waitfor.js';
 
-import HelixReview from '../../../../../libs/blocks/abp-review/components/helixReview/HelixReview.js';
+import HelixReview from '../../../../../blocks/abp-review/components/helixReview/HelixReview.js';
 import {
   stubFetch,
   stubFetchError,

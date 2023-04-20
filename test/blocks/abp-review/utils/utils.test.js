@@ -2,7 +2,7 @@ import { expect } from '@esm-bundle/chai';
 import {
   addToAverage,
   isKeyboardNavigation,
-} from '../../../../libs/blocks/abp-review/utils/utils.js';
+} from '../../../../blocks/abp-review/utils/utils.js';
 
 describe('Utils', () => {
   it('could add to average', () => {

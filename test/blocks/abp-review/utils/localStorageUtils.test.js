@@ -2,7 +2,7 @@ import { expect } from '@esm-bundle/chai';
 import {
   getLocalStorage,
   setLocalStorage,
-} from '../../../../libs/blocks/abp-review/utils/localStorageUtils.js';
+} from '../../../../blocks/abp-review/utils/localStorageUtils.js';
 
 describe('LocalStorageUtils', () => {
   // Set a valid JSON parsed value

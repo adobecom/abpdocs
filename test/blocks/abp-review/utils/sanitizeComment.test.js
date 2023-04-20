@@ -1,5 +1,5 @@
 import { expect } from '@esm-bundle/chai';
-import sanitizeComment from '../../../../libs/blocks/abp-review/utils/sanitizeComment.js';
+import sanitizeComment from '../../../../blocks/abp-review/utils/sanitizeComment.js';
 
 describe('sanitizeComment Util', () => {
   it('could sanitize a comment', () => {

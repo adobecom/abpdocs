@@ -1,7 +1,7 @@
 import { readFile } from '@web/test-runner-commands';
 import { expect } from '@esm-bundle/chai';
 import { waitForElement } from '../../helpers/waitfor.js';
-import init from '../../../libs/blocks/abp-review/abp-review.js';
+import init from '../../../blocks/abp-review/abp-review.js';
 
 describe('Review Comp', () => {
   beforeEach(async () => {
