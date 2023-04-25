@@ -80,6 +80,7 @@ const App = ({ rootEl, strings }) => html`
       onRatingHover=${({ rating }) => {}}
       onReviewLoad=${({ hasRated, rating }) => {}}
       goodRatingPlaceholder=${strings.goodRatingPlaceholder}
+      loginDate=${new Date()}
     />
   `;
 
@@ -139,17 +140,11 @@ const removeMetaDataElements = (el) => {
 };
 
 const init = async (el) => {
-  const miloLibs = 'http://localhost:6456/libs';
-  const codeRoot = 'http://localhost:3000';
-  const base = miloLibs || codeRoot;
-
-  loadStyle(`${base}/ui/page/page.css`);
+  const loginDate = new Date();
   const metaData = getMetaData(el);
   const strings = getStrings(metaData);
   removeMetaDataElements(el);
-
-  const app = html` <${App} rootEl=${el} strings="${strings}" /> `;
-
+  const app = html` <${App} rootEl=${el} strings="${strings}"/> `;
   render(app, el);
 };
 

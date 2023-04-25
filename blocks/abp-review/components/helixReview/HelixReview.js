@@ -17,10 +17,10 @@ const HelixReview = ({
   tooltipDelay = 300,
   visitorId,
   initialValue,
+  loginDate,
 }) => {
   const [avgRating, setAvgRating] = useState(5);
   const [totalReviews, setTotalReviews] = useState(0);
-
   const onRatingSet = ({
     rating: newRating,
     comment,
@@ -34,6 +34,8 @@ const HelixReview = ({
       reviewPath,
       visitorId,
       page: location,
+      loginDate,
+      timeSpentInMinutes: new Date().getMinutes() - loginDate.getMinutes(),
     });
 
     if (onRatingSetCallback) {
@@ -56,6 +58,7 @@ const HelixReview = ({
       tooltipDelay=${tooltipDelay}
       totalReviews=${totalReviews}
       initialValue=${initialValue}
+      loginDate=${loginDate}
     />
   `;
 
