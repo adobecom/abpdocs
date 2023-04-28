@@ -1,4 +1,4 @@
-import { html } from '../../htm-preact.js';
+import { html } from '../../../../htm-preact/htm-preact.js';
 
 const KEY_ENTER = 13;
 const KEY_SPACE = 32;
