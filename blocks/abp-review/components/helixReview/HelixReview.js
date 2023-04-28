@@ -34,8 +34,7 @@ const HelixReview = ({
       reviewPath,
       visitorId,
       page: location,
-      loginDate,
-      timeSpentInMinutes: new Date().getMinutes() - loginDate.getMinutes(),
+      timeSpentInSeconds: new Date().getSeconds() - loginDate.getSeconds(),
     });
 
     if (onRatingSetCallback) {

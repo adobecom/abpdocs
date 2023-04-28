@@ -3,7 +3,7 @@ const getDate = () =>
   new Date().toISOString().replace(/[TZ]/g, ' ').split('.')[0].trim();
 
 const sendHelixData = ({
-  comment, lang, rating, postUrl, visitorId, page, loginDate, timeSpentInMinutes,
+  comment, lang, rating, postUrl, visitorId, page, timeSpentInSeconds,
 } = {}) => {
   const data = [
     { name: 'Timestamp', value: getDate() },
@@ -24,11 +24,8 @@ const sendHelixData = ({
   if (page) {
     data.push({ name: 'Page', value: page });
   }
-  if (loginDate) {
-    data.push({ name: 'LoginDate', value: loginDate });
-  }
-  if (timeSpentInMinutes) {
-    data.push({ name: 'TimeSpentInMinutes', value: timeSpentInMinutes });
+  if (timeSpentInSeconds) {
+    data.push({ name: 'TimeSpentInSeconds', value: timeSpentInSeconds });
   }
 
   const body = { data };
