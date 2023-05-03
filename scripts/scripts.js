@@ -63,9 +63,9 @@ const { loadArea, loadDelayed, setConfig } = await import(`${miloLibs}/utils/uti
   setConfig({ ...CONFIG, miloLibs });
   await loadArea();
   loadDelayed();
+  const spacing = document.querySelector('.xxl-spacing');
+  spacing?.classList.add('three-up');
 }());
-
-
 
 /*
  * utils
