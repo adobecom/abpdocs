@@ -81,6 +81,7 @@ const App = ({ rootEl, strings }) => html`
       onReviewLoad=${({ hasRated, rating }) => {}}
       goodRatingPlaceholder=${strings.goodRatingPlaceholder}
       loginDate=${new Date()}
+      profileUrl=${strings.profileUrl}
     />
   `;
 
@@ -101,6 +102,7 @@ const getStrings = (metaData) => {
     reviewurl,
     initialvalue,
     above3ratingplaceholder,
+    profileurl,
   } = metaData;
   return {
     commentLabel: commentfieldlabel,
@@ -118,6 +120,7 @@ const getStrings = (metaData) => {
     postUrl: reviewurl,
     initialValue: initialvalue,
     goodRatingPlaceholder: above3ratingplaceholder,
+    profileUrl: profileurl,
   };
 };
 
@@ -140,7 +143,6 @@ const removeMetaDataElements = (el) => {
 };
 
 const init = async (el) => {
-  const loginDate = new Date();
   const metaData = getMetaData(el);
   const strings = getStrings(metaData);
   removeMetaDataElements(el);
