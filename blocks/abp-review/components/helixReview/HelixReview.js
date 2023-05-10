@@ -5,7 +5,7 @@ import getUserProfile from '../../utils/getUserProfile.js';
 
 import Review from '../review/Review.js';
 
-const HelixReview = async ({
+const HelixReview = ({
   clickTimeout = 5000,
   commentThreshold = 5,
   hideTitleOnReload,
@@ -24,6 +24,7 @@ const HelixReview = async ({
 }) => {
   const [avgRating, setAvgRating] = useState(5);
   const [totalReviews, setTotalReviews] = useState(0);
+  console.log(' profileUrl ', profileUrl);
   const onRatingSet = async ({
     rating: newRating,
     comment,
