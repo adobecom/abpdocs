@@ -1,4 +1,4 @@
-import { getLibs } from '../../scripts/utils.js';
+import { getLibs } from '../../../scripts/utils.js';
 
 const BACOM_HOSTS = ['localhost', '--bacom--adobecom.hlx.page', '--bacom--adobecom.hlx.live', 'business.adobe.com'];
 

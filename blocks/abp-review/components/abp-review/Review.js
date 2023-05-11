@@ -3,7 +3,7 @@ import {
   useEffect,
   useRef,
   useState,
-} from '../../htm-preact.js';
+} from '../../../../deps/htm-preact.js';
 
 import { addToAverage } from '../../utils/utils.js';
 import sanitizeComment from '../../utils/sanitizeComment.js';
