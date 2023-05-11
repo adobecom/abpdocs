@@ -1,5 +1,5 @@
 const getLocalStorage = (key) => {
-  const data = window.localStorage.getItem(key);
+  const data = window.sessionStorage.getItem(key);
   try {
     // This will return null if the local storage object is empty.
     return JSON.parse(data);
@@ -10,7 +10,7 @@ const getLocalStorage = (key) => {
 };
 
 const setLocalStorage = (key, data) => {
-  window.localStorage.setItem(key, JSON.stringify(data));
+  window.sessionStorage.setItem(key, JSON.stringify(data));
 };
 
 export { getLocalStorage, setLocalStorage };
