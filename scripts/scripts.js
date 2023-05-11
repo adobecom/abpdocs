@@ -62,7 +62,7 @@ const miloLibs = setLibs(LIBS);
 
 const setUserProfile = async () => {
   let profileData = getLocalStorage('profile');
-  if (profileData != null) {
+  if (profileData === null) {
     const response = await fetch(PROFILE_URL, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
