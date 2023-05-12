@@ -1,11 +1,9 @@
-import { getLocalStorage } from '../../../scripts/localStorageUtils.js';
-
 const getDate = () =>
   // eslint-disable-next-line implicit-arrow-linebreak
   new Date().toISOString().replace(/[TZ]/g, ' ').split('.')[0].trim();
 
 const sendHelixData = ({
-  comment, lang, rating, postUrl, visitorId, page, timeSpentInSeconds,
+  comment, lang, rating, postUrl, visitorId, page, timeSpentInSeconds, profileDetails,
 } = {}) => {
   const data = [
     { name: 'Timestamp', value: getDate() },
@@ -31,9 +29,10 @@ const sendHelixData = ({
   if (timeSpentInSeconds) {
     data.push({ name: 'TimeSpentInSeconds', value: timeSpentInSeconds });
   }
-  const profileDetails = getLocalStorage('profile');
+
   if (profileDetails) {
-    data.push({ name: profileDetails?.name, email: profileDetails?.email });
+    const { name, email } = profileDetails;
+    data.push({ name, email });
   }
 
   const body = { data };

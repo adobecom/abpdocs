@@ -11,8 +11,7 @@
  */
 
 import { setLibs } from './utils.js';
-import { getLocalStorage, setLocalStorage } from './localStorageUtils.js';
-
+import loadProfileDetails from '../utils/profileUtils.js';
 // Add project-wide styles here.
 const STYLES = '';
 
@@ -32,8 +31,6 @@ const CONFIG = {
     kr: { ietf: 'ko-KR', tk: 'zfo3ouc' },
   },
 };
-
-const PROFILE_URL = '/services/profile';
 
 // Default to loading the first image as eager.
 (async function loadLCPImage() {
@@ -60,25 +57,12 @@ const miloLibs = setLibs(LIBS);
   });
 }());
 
-const setUserProfile = async () => {
-  let profileData = getLocalStorage('profile');
-  if (profileData === null) {
-    const response = await fetch(PROFILE_URL, {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
-    });
-    profileData = await response.json();
-  }
-  const details = profileData?.details;
-  setLocalStorage('profile', details);
-};
-
 const { loadArea, loadDelayed, setConfig } = await import(`${miloLibs}/utils/utils.js`);
 
 (async function loadPage() {
   setConfig({ ...CONFIG, miloLibs });
   await loadArea();
-  await setUserProfile();
+  await loadProfileDetails();
   loadDelayed();
   const spacing = document.querySelector('.force-three-up');
   spacing?.classList.add('three-up');
