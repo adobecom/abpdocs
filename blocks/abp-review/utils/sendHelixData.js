@@ -31,9 +31,9 @@ const sendHelixData = ({
   if (timeSpentInSeconds) {
     data.push({ name: 'TimeSpentInSeconds', value: timeSpentInSeconds });
   }
-  const profile = getLocalStorage('profile');
-  if (profile) {
-    data.push({ profile });
+  const profileDetails = getLocalStorage('profile');
+  if (profileDetails) {
+    data.push({ name: profileDetails?.name, email: profileDetails?.email });
   }
 
   const body = { data };

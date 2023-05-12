@@ -69,7 +69,8 @@ const setUserProfile = async () => {
     });
     profileData = await response.json();
   }
-  setLocalStorage('profile', profileData);
+  const details = profileData?.details;
+  setLocalStorage('profile', details);
 };
 
 const { loadArea, loadDelayed, setConfig } = await import(`${miloLibs}/utils/utils.js`);
