@@ -1,10 +1,10 @@
 const getSessionStorage = (key) => {
   const data = window.sessionStorage.getItem(key);
   try {
-    // This will return null if the local storage object is empty.
+    // This will return null if the session storage object is empty.
     return JSON.parse(data);
   } catch (e) {
-    // Catch in case someone set something weird in our local storage.
+    // Catch in case someone set something weird in our session storage.
     return null;
   }
 };

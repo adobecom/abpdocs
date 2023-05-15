@@ -8,11 +8,11 @@ const loadProfileDetails = async () => {
     try {
       const response = await fetch(PROFILE_URL, { headers: { 'Content-Type': 'application/json' } });
       profileData = await response.json();
+      setSessionStorage('profile', profileData?.details);
     } catch (e) {
       console.log('error in fetching the user data', e);
     }
   }
-  setSessionStorage('profile', profileData?.details);
 };
 
 export default loadProfileDetails;
