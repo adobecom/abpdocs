@@ -11,4 +11,4 @@ const getSessionStorage = (key) => {
 
 const setSessionStorage = (key, data) => window.sessionStorage.setItem(key, JSON.stringify(data));
 
-export { getSessionStorage, setSessionStorage };
+export default { getSessionStorage, setSessionStorage };
