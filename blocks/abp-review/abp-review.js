@@ -140,7 +140,6 @@ const removeMetaDataElements = (el) => {
 };
 
 const init = async (el) => {
-  const loginDate = new Date();
   const metaData = getMetaData(el);
   const strings = getStrings(metaData);
   removeMetaDataElements(el);

@@ -2,6 +2,7 @@ import { useState, html } from '../../htm-preact.js';
 
 import sendHelixData from '../../utils/sendHelixData.js';
 import Review from '../review/Review.js';
+import getSessionStorage from '../../../../utils/sessionStorageUtils.js';
 
 const HelixReview = ({
   clickTimeout = 5000,
@@ -26,6 +27,7 @@ const HelixReview = ({
     comment,
   }) => {
     const location = window.location?.href;
+    const profileDetails = getSessionStorage();
     sendHelixData({
       comment,
       lang,
@@ -35,6 +37,7 @@ const HelixReview = ({
       visitorId,
       page: location,
       timeSpentInSeconds: Math.abs(new Date() - loginDate) / 1000,
+      profileDetails,
     });
 
     if (onRatingSetCallback) {

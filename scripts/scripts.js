@@ -11,7 +11,7 @@
  */
 
 import { setLibs } from './utils.js';
-
+import loadProfileDetails from '../utils/profileUtils.js';
 // Add project-wide styles here.
 const STYLES = '';
 
@@ -62,6 +62,7 @@ const { loadArea, loadDelayed, setConfig } = await import(`${miloLibs}/utils/uti
 (async function loadPage() {
   setConfig({ ...CONFIG, miloLibs });
   await loadArea();
+  await loadProfileDetails();
   loadDelayed();
   const spacing = document.querySelector('.force-three-up');
   spacing?.classList.add('three-up');
