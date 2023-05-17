@@ -57,10 +57,11 @@ const miloLibs = setLibs(LIBS);
   });
 }());
 
-const { loadArea, loadDelayed, setConfig } = await import(`${miloLibs}/utils/utils.js`);
+const { loadArea, loadDelayed, setConfig, getConfig } = await import(`${miloLibs}/utils/utils.js`);
 
 (async function loadPage() {
   setConfig({ ...CONFIG, miloLibs });
+  console.log(' get config from scripts ', getConfig());
   await loadArea();
   await loadProfileDetails();
   loadDelayed();
@@ -82,3 +83,5 @@ export function toClassName(name) {
     ? name.toLowerCase().replace(/[^0-9a-z]/gi, '-')
     : '';
 }
+
+export const getCustomConfig = () => getConfig();
