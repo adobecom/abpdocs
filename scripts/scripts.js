@@ -61,7 +61,6 @@ const { loadArea, loadDelayed, setConfig, getConfig } = await import(`${miloLibs
 
 (async function loadPage() {
   setConfig({ ...CONFIG, miloLibs });
-  console.log(' get config from scripts ', getConfig());
   await loadArea();
   await loadProfileDetails();
   loadDelayed();
