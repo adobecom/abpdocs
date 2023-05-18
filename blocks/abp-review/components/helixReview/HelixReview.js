@@ -1,8 +1,8 @@
 import { useState, html } from '../../htm-preact.js';
-
 import sendHelixData from '../../utils/sendHelixData.js';
 import Review from '../review/Review.js';
-import getSessionStorage from '../../../../utils/sessionStorageUtils.js';
+import sessionStorageUtils from '../../../../utils/sessionStorageUtils.js';
+import { getuseCaseText } from '../../utils/utils.js';
 
 const HelixReview = ({
   clickTimeout = 5000,
@@ -27,7 +27,7 @@ const HelixReview = ({
     comment,
   }) => {
     const location = window.location?.href;
-    const profileDetails = getSessionStorage();
+    const profileDetails = sessionStorageUtils.getSessionStorage();
     sendHelixData({
       comment,
       lang,
@@ -38,6 +38,7 @@ const HelixReview = ({
       page: location,
       timeSpentInSeconds: Math.abs(new Date() - loginDate) / 1000,
       profileDetails,
+      useCase: getuseCaseText(document),
     });
 
     if (onRatingSetCallback) {
