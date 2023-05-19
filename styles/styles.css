@@ -1,6 +1,6 @@
 /* stylelint-disable no-descending-specificity */
 .columns.table > .row {
-  align-items: flex-start;
+  align-items: flex-start !important;
 }
 
 .row:nth-child(odd) {
