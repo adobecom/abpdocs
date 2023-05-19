@@ -1,8 +1,24 @@
-/* 
- * Put project specific base styles here.
- *
- * Note: The proect does not load this file.
- *       You will need to load these using scripts.js.
- * 
- *
- */
+/* stylelint-disable no-descending-specificity */
+.columns.table > .row {
+  align-items: flex-start;
+}
+
+.row:nth-child(odd) {
+  border: 1px solid #D5D5D5;
+}
+
+.row:nth-child(even) {
+  border: 1px solid #D5D5D5;
+}
+
+.col:nth-child(even) {
+  border-right: 1px solid #D5D5D5;
+}
+
+.col:nth-child(odd) {
+  border-right: 1px solid #D5D5D5;
+}
+
+.col:nth-last-child(1) {
+  border: 0;
+}
