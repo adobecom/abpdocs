@@ -57,15 +57,25 @@ const miloLibs = setLibs(LIBS);
   });
 }());
 
-const { loadArea, loadDelayed, setConfig } = await import(`${miloLibs}/utils/utils.js`);
+// Prevent redirection to helpx url when pressing enter in search
+(function disbaledGnavSearchEnter() {
+  EventTarget.prototype.addEventListener = new Proxy(EventTarget.prototype.addEventListener, {
+    apply: (targetFn, targetElement, argumentsList) => {
+      const [event, fn] = argumentsList;
+      const doNothing = () => { };
+      const shouldDoNothing = targetElement?.classList?.[0] === 'gnav-search-input' && event === 'keydown';
+      const args = [event, shouldDoNothing ? doNothing : fn];
+      Reflect.apply(targetFn, targetElement, args);
+    },
+  });
+}());
+
+const { loadArea, setConfig } = await import(`${miloLibs}/utils/utils.js`);
 
 (async function loadPage() {
   setConfig({ ...CONFIG, miloLibs });
   await loadArea();
   await loadProfileDetails();
-  loadDelayed();
-  const spacing = document.querySelector('.force-three-up');
-  spacing?.classList.add('three-up');
 }());
 
 /*
