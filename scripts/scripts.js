@@ -58,7 +58,7 @@ const miloLibs = setLibs(LIBS);
 }());
 
 // Prevent redirection to helpx url when pressing enter in search
-(function shenanigans() {
+(function disbaledGnavSearchEnter() {
   EventTarget.prototype.addEventListener = new Proxy(EventTarget.prototype.addEventListener, {
     apply: (targetFn, targetElement, argumentsList) => {
       const [event, fn] = argumentsList;
@@ -76,8 +76,6 @@ const { loadArea, setConfig } = await import(`${miloLibs}/utils/utils.js`);
   setConfig({ ...CONFIG, miloLibs });
   await loadArea();
   await loadProfileDetails();
-  const spacing = document.querySelector('.force-three-up');
-  spacing?.classList.add('three-up');
 }());
 
 /*
