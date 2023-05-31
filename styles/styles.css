@@ -1,25 +1,27 @@
 /* stylelint-disable no-descending-specificity */
 .columns.table > .row {
   align-items: flex-start !important;
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
 }
 
 .row:nth-child(odd) {
-  border: 1px solid #D5D5D5;
+  border: 2px solid #c7c5c7;
   height: 100%;
 }
 
 .row:nth-child(even) {
-  border: 1px solid #D5D5D5;
+  border: 2px solid #c7c5c7;
   height: 100%;
 }
 
 .col:nth-child(even) {
-  border-right: 1px solid #D5D5D5;
+  border-right: 2px solid #c7c5c7;
   height: 100%;
 }
 
 .col:nth-child(odd) {
-  border-right: 1px solid #D5D5D5;
+  border-right: 2px solid #c7c5c7;
   height: 100%;
 }
 
