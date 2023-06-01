@@ -46,6 +46,14 @@ const CONFIG = {
 
 const miloLibs = setLibs(LIBS);
 
+(function loadAbpStyles() {
+  const path = '/styles/styles.css';
+  const link = document.createElement('link');
+  link.setAttribute('rel', 'stylesheet');
+  link.setAttribute('href', path);
+  document.head.appendChild(link);
+}());
+
 (function loadStyles() {
   const paths = [`${miloLibs}/styles/styles.css`];
   if (STYLES) { paths.push(STYLES); }
