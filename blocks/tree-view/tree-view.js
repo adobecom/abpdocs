@@ -160,7 +160,6 @@ const init = async (el) => {
     topList.role = 'menu';
 
     const topListItems = topList.querySelectorAll(':scope > li');
-    console.log(' topListItems ', topListItems);
     topListItems.forEach((topListItem) => {
       topListItem.setAttribute('role', 'menuitem');
       topListItem.setAttribute('aria-haspopup', 'menu');
