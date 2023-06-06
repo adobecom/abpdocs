@@ -160,7 +160,6 @@ const init = async (el) => {
     topList.role = 'menu';
 
     const topListItems = topList.querySelectorAll(':scope > li');
-
     topListItems.forEach((topListItem) => {
       topListItem.setAttribute('role', 'menuitem');
       topListItem.setAttribute('aria-haspopup', 'menu');
@@ -180,7 +179,7 @@ const init = async (el) => {
       subList.role = 'menu';
       subList.setAttribute('aria-labelledby', id);
       subList.setAttribute('aria-expanded', false);
-      subList.hidden = true;
+      //  subList.hidden = true;
 
       button.addEventListener('click', (event) => toggleSection(event.target.closest('li[role=menuitem]')));
       button.addEventListener('keydown', buttonKeydown);
