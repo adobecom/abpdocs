@@ -27,7 +27,7 @@ const HelixReview = ({
     comment,
   }) => {
     const location = window.location?.href;
-    const profileDetails = sessionStorageUtils.getSessionStorage();
+    const profileDetails = sessionStorageUtils.getSessionStorage('profile');
     sendHelixData({
       comment,
       lang,

@@ -35,8 +35,11 @@ const sendHelixData = ({
   }
   if (profileDetails) {
     const { name, email } = profileDetails;
-    if (name && email) {
-      data.push({ name, email });
+    if (name) {
+      data.push({ name: 'Name', value: name });
+    }
+    if (email) {
+      data.push({ name: 'Email', value: email });
     }
   }
 
