@@ -1,6 +1,6 @@
 import { getLibs } from '../../scripts/utils.js';
 
-const BACOM_HOSTS = ['localhost', '--bacom--adobecom.hlx.page', '--bacom--adobecom.hlx.live', 'business.adobe.com', 'main--abpdocs--adobecom.hlx.page', 'abp.adobe.com'];
+const BACOM_HOSTS = ['localhost', '--abpdocs--adobecom.hlx.page', '--abpdocs--adobecom.hlx.live', 'business.adobe.com', 'abp.adobe.com'];
 
 export const isCurrentPage = (link) => {
   const currentPath = window.location.pathname.replace('.html', '');
@@ -182,10 +182,10 @@ const init = async (el) => {
         subList.role = 'menu';
         subList.setAttribute('aria-labelledby', id);
         subList.setAttribute('aria-expanded', false);
-      //  subList.hidden = true;
-
+        //  subList.hidden = true;
         button.addEventListener('click', (event) => toggleSection(event.target.closest('li[role=menuitem]')));
         button.addEventListener('keydown', buttonKeydown);
+      }
     });
 
     const subListItems = topList.querySelectorAll('li ul li');
