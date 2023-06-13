@@ -1,8 +1,6 @@
 .tree-view {
   background-color: #fafafa;
   padding: var(--spacing-m) var(--spacing-m) var(--spacing-xs);
-  position: fixed;
-  width: 15%;
 }
 
 .tree-view .title {
