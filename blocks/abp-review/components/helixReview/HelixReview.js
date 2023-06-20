@@ -1,8 +1,8 @@
-import { useState, html } from '../../htm-preact.js';
+import { useState, html } from '../../../../htm-preact/htm-preact.js';
 import sendHelixData from '../../utils/sendHelixData.js';
 import Review from '../review/Review.js';
 import sessionStorageUtils from '../../../../utils/sessionStorageUtils.js';
-import { getuseCaseText } from '../../utils/utils.js';
+import getuseCaseText from '../../../../utils/utils.js';
 
 const HelixReview = ({
   clickTimeout = 5000,

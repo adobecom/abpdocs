@@ -11,6 +11,4 @@ const isKeyboardNavigation = (ev) =>
     ev.nativeEvent.webkitForce !== undefined &&
     ev.nativeEvent.webkitForce === 0);
 
-const getuseCaseText = (document) => document.querySelector('div.tree-view .title')?.textContent;
-
-export { addToAverage, isKeyboardNavigation, getuseCaseText };
+export { addToAverage, isKeyboardNavigation};

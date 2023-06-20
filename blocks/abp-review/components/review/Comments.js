@@ -3,7 +3,7 @@ import {
   useState,
   useRef,
   html,
-} from '../../htm-preact.js';
+} from '../../../../htm-preact/htm-preact.js';
 
 function Comments({
   label,
