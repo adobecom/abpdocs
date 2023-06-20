@@ -1,7 +1,7 @@
 import { html } from '../../../../htm-preact/htm-preact.js';
 
 function Comment({ handleInputChange, like, donotlike, general, option }) {
-  const submitButton = html`<input type="submit" value='submit'/>`;
+  const submitButton = html`<input type="submit" value='Submit'/>`;
   const getplaceholder = () => {
     if (option === 'I like something') {
       return like;
