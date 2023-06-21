@@ -4,7 +4,6 @@ const getBreadCrumbsUseCase = (document) => {
 };
 
 const getuseCaseText = (document) => {
-  //  getuseCaseText to pick up
   const useCase = document.querySelector('div.tree-view .title')?.textContent;
   return useCase || getBreadCrumbsUseCase(document);
 };
