@@ -9,4 +9,4 @@ const getuseCaseText = (document) => {
   return useCase || getBreadCrumbsUseCase(document);
 };
 
-export default { getuseCaseText, getBreadCrumbsUseCase };
+export default getuseCaseText;
