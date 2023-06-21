@@ -11,7 +11,7 @@
  */
 
 import { setLibs } from './utils.js';
-import loadProfileDetails from '../utils/profileUtils.js';
+import loadProfileDetails from '../blocks/utils/profileUtils.js';
 // Add project-wide styles here.
 const STYLES = '';
 

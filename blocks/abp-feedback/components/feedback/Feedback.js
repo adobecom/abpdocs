@@ -9,8 +9,8 @@ import Scope from './Scope.js';
 import Comment from './Comment.js';
 import Icons from './Icons.js';
 import sendFeedbackData from '../../utils/sendHelixFeedbackData.js';
-import sessionStorageUtils from '../../../../utils/sessionStorageUtils.js';
-import getuseCaseText from '../../../../utils/utils.js';
+import sessionStorageUtils from '../../../utils/sessionStorageUtils.js';
+import getuseCaseText from '../../../utils/utils.js';
 
 const defaultStrings = {
   feedbackCommentPlaceholder: 'Please type your feedback here!',
