@@ -4,6 +4,7 @@ import Review from '../review/Review.js';
 import sessionStorageUtils from '../../../utils/sessionStorageUtils.js';
 import getuseCaseText from '../../../utils/utils.js';
 
+// Helix Review component
 const HelixReview = ({
   clickTimeout = 5000,
   commentThreshold = 5,
