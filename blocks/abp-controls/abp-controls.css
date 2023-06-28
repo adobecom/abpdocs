@@ -5,3 +5,8 @@
   max-width: 1200px;
   justify-content: space-between;
 }
+
+.abp-controls .no-previous {
+  position: relative;
+  left: 1000px;
+}

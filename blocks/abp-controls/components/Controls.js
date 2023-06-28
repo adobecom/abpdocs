@@ -1,11 +1,16 @@
-import { useEffect, html, useState } from '../../../htm-preact/htm-preact.js';
+import {
+  html,
+  useState,
+  useEffect,
+} from '../htm-preact.js';
 
 // eslint-disable-next-line no-unused-vars
 const Controls = ({ previousButtonText, nextButtonText }) => {
-  const [nextURL, setNextURL] = useState('');
-  const [nextText, setNextText] = useState('');
-  const [previousText, setPreviousText] = useState('');
-  const [previousURL, setPreviousURL] = useState('');
+  const [nextURL, setNextURL] = useState();
+  const [nextText, setNextText] = useState(nextButtonText);
+  const [previousText, setPreviousText] = useState(previousButtonText);
+  const [previousURL, setPreviousURL] = useState();
+
   useEffect(() => {
     const currentURL = window.location.pathname;
     const currentNavItem = document.querySelector(`li[role="presentation"] a[href="${currentURL}"]`)?.parentElement;
@@ -17,8 +22,11 @@ const Controls = ({ previousButtonText, nextButtonText }) => {
     }
   }, []);
 
-  const previousCom = html`<a href=${previousURL} className='previous'>  ${previousText}  </a>`;
-  const nextCom = html` <a href=${nextURL}  className='next'> ${nextText}  </a>`;
+  const nextClassName = previousURL === undefined ? 'no-previous' : 'previous-exist';
+  const previousClassName = nextURL === undefined ? 'no-next' : 'next-exist';
+
+  const previousCom = html`<a href=${previousURL} className=${previousClassName}> ${previousText}</a>`;
+  const nextCom = html`<a href=${nextURL}  className=${nextClassName}> ${nextText}  </a>`;
   const controlsComponent = html`
      ${previousURL && previousCom}
      ${nextURL && nextCom}
