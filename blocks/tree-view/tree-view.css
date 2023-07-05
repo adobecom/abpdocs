@@ -6,7 +6,7 @@
 }
 
 .tree-view .title {
-  text-transform: uppercase;
+  text-transform: none !important;
   font-weight: bold;
   padding-bottom: var(--spacing-xs);
   border-bottom: 1px solid #bfbfbf;
