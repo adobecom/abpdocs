@@ -1,6 +1,6 @@
 import { getLibs } from '../../scripts/utils.js';
 
-const BACOM_HOSTS = ['localhost', '--bacom--adobecom.hlx.page', '--bacom--adobecom.hlx.live', 'business.adobe.com'];
+const BACOM_HOSTS = ['localhost', '--abpdocs--adobecom.hlx.page', '--abpdocs--adobecom.hlx.live', 'abp.adobe.com'];
 
 export const isCurrentPage = (link) => {
   const currentPath = window.location.pathname.replace('.html', '');
@@ -160,30 +160,32 @@ const init = async (el) => {
     topList.role = 'menu';
 
     const topListItems = topList.querySelectorAll(':scope > li');
-
     topListItems.forEach((topListItem) => {
-      topListItem.setAttribute('role', 'menuitem');
-      topListItem.setAttribute('aria-haspopup', 'menu');
-      topListItem.setAttribute('aria-expanded', false);
+      const ulSubLists = topListItem.querySelectorAll('ul');
+      const needAccordion = ulSubLists.length > 0;
+      if (needAccordion) {
+        topListItem.setAttribute('role', 'menuitem');
+        topListItem.setAttribute('aria-haspopup', 'menu');
+        topListItem.setAttribute('aria-expanded', false);
 
-      let content = topListItem.textContent.split('\n')[0];
-      let id = content.trim().replaceAll(' ', '-');
-      if (topListItem.querySelector(':scope > a')) {
-        content = topListItem.querySelector(':scope > a').outerHTML;
-        id = topListItem.querySelector(':scope > a').textContent;
+        let content = topListItem.textContent.split('\n')[0];
+        let id = content.trim().replaceAll(' ', '-');
+        if (topListItem.querySelector(':scope > a')) {
+          content = topListItem.querySelector(':scope > a').outerHTML;
+          id = topListItem.querySelector(':scope > a').textContent;
+        }
+        const button = createTag('button', { id }, content);
+        const subList = topListItem.querySelector('ul');
+
+        topListItem.innerHTML = '';
+        topListItem.append(button, subList);
+        subList.role = 'menu';
+        subList.setAttribute('aria-labelledby', id);
+        subList.setAttribute('aria-expanded', false);
+        //  subList.hidden = true;
+        button.addEventListener('click', (event) => toggleSection(event.target.closest('li[role=menuitem]')));
+        button.addEventListener('keydown', buttonKeydown);
       }
-      const button = createTag('button', { id }, content);
-      const subList = topListItem.querySelector('ul');
-
-      topListItem.innerHTML = '';
-      topListItem.append(button, subList);
-      subList.role = 'menu';
-      subList.setAttribute('aria-labelledby', id);
-      subList.setAttribute('aria-expanded', false);
-      subList.hidden = true;
-
-      button.addEventListener('click', (event) => toggleSection(event.target.closest('li[role=menuitem]')));
-      button.addEventListener('keydown', buttonKeydown);
     });
 
     const subListItems = topList.querySelectorAll('li ul li');

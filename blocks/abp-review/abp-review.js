@@ -1,4 +1,4 @@
-import { html, render } from './htm-preact.js';
+import { html, render } from '../../htm-preact/htm-preact.js';
 
 import HelixReview from './components/helixReview/HelixReview.js';
 
@@ -140,7 +140,6 @@ const removeMetaDataElements = (el) => {
 };
 
 const init = async (el) => {
-  const loginDate = new Date();
   const metaData = getMetaData(el);
   const strings = getStrings(metaData);
   removeMetaDataElements(el);

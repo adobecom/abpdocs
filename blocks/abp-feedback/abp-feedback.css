@@ -1,0 +1,247 @@
+/* stylelint-disable selector-id-pattern */
+/* stylelint-disable custom-property-pattern */
+/* stylelint-disable selector-class-pattern */
+/* stylelint-disable rule-empty-line-before */
+:root {
+  --modal-focus-color: #109cde;
+  --commentBgColor: #fff;
+  --ctaCommentHeight: 22px;
+  --feedbackCommentsHeight: 58px;
+  --sendEnabledColor: #505050;
+  --commentFieldsHeight: calc(var(--feedbackCommentsHeight) + var(--ctaCommentHeight));
+}
+
+.feedback-modal {
+  display: none; /* Hidden by default */
+  border-radius: 6px;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: calc((100% - 6px) - 2em);
+  max-height: calc((100% - 6px) - 2em);
+  height: fit-content;
+  width: 100%;
+  user-select: text;
+  visibility: visible;
+  overflow: auto;
+  z-index: 102;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  pointer-events: all;
+}
+@media only screen and (min-width: 1200px) {
+  .hlx-FeedbackWrapper {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+
+@media (min-width: 600px) {
+  .dialog-modal {
+    max-width: 80vw;
+    width: fit-content;
+  }
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 3px solid #000;
+  width: 45%; /* Could be more or less, depending on screen size */
+}
+
+.feedback-topsection {
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+}
+
+.hlx-FeedbackWrapper .hlx-feedbackTitle {
+  font-size: 28px;
+  margin-top: auto;
+ }
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.stickyplace {
+  border: 1px dashed grey;
+  position: sticky;
+  top:0;
+}
+
+.controls {
+  display: flex;
+  animation: fadeIn 0.5s;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.hlx-Feedback-commentFields {
+  position: relative;
+  margin-top: 5px;
+  border: 1px solid #000;
+  box-sizing: content-box;
+  width: 50%;
+  margin-left: 25px;
+}
+
+.hlx-Feedback-commentFields input[type='submit'] {
+  position: absolute;
+  right: 2px;
+  top: calc(var(--feedbackCommentsHeight) + 20px);
+  width: auto;
+  background: var(--commentBgColor);
+  border: none;
+  -webkit-appearance: none;
+  appearance: none;
+  font-weight: 700;
+  color: var(--sendEnabledColor);
+  font-size: 16px;
+  text-align: right;
+  padding: 1px 10px;
+  cursor: pointer;
+}
+
+.feedbackSubmit {
+  background-color: #0469e3;
+  color: #fff;
+  border-radius: 20px;
+  min-height: 40px;
+  padding: 0 18px;
+  text-decoration: none;
+  font-size: 17px;
+  line-height: 21px;
+  height: auto;
+  font-weight: 700;
+  min-width: 72px;
+  border-style: solid;
+}
+
+.feedback-modal .close {
+  color: #000;
+  margin-left: 60%;
+  top: auto;
+  font-size: 28px;
+  font-weight: bold;
+  position: relative;
+  left: 3%;
+}
+
+.floating-button-div {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.feedback-launch {
+   width: 150px;
+   height: 30px;
+   z-index: 50;
+   right: 100px;
+   cursor: pointer;
+   font-weight : bold ;
+}
+
+
+.hlx-icons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.hlx-feedback-option {
+  margin: 5px;
+  padding: 5px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.hlx-feedback-grey {
+  background: gray;
+}
+
+.hlx-feedback-options-comment {
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+.hlx-feedback-all-options {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+.hlx-feedback-ctaCover {
+  background-color: var(--commentBgColor);
+  cursor: text;
+  position: absolute;
+  right: 17px;
+  width: 94%;
+}
+
+.hlx-fifty-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.hlx-hundred-icon {
+  width: 100px;
+  height: 100px;
+}
+
+.hlx-feedback-comments {
+  border:0;
+  width: 97%;
+  height: 95%;
+  outline: none;
+  overflow:hidden;
+  resize: none
+}
+.hlx-sub-heading {
+  text-decoration: underline;
+}
+
+.hlx-icon {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.hlx-playbook-margin{
+  margin-top: 10px;
+}
+
+.hlx-scope-border-bottom {
+  border-bottom: 2px solid black;
+}
+
+.hlx-scope-border-right{
+  border-right: 2px solid black;
+}
+
+.hlx-scope-margin{
+  margin-right: 10px;
+}
+
+.hlx-feedback-submit-response {
+  font-size: 24px;
+  text-align: center;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

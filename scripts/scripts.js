@@ -11,7 +11,7 @@
  */
 
 import { setLibs } from './utils.js';
-
+import loadProfileDetails from '../blocks/utils/profileUtils.js';
 // Add project-wide styles here.
 const STYLES = '';
 
@@ -46,6 +46,14 @@ const CONFIG = {
 
 const miloLibs = setLibs(LIBS);
 
+(function loadAbpStyles() {
+  const path = '/styles/styles.css';
+  const link = document.createElement('link');
+  link.setAttribute('rel', 'stylesheet');
+  link.setAttribute('href', path);
+  document.head.appendChild(link);
+}());
+
 (function loadStyles() {
   const paths = [`${miloLibs}/styles/styles.css`];
   if (STYLES) { paths.push(STYLES); }
@@ -57,14 +65,12 @@ const miloLibs = setLibs(LIBS);
   });
 }());
 
-const { loadArea, loadDelayed, setConfig } = await import(`${miloLibs}/utils/utils.js`);
+const { loadArea, setConfig } = await import(`${miloLibs}/utils/utils.js`);
 
 (async function loadPage() {
   setConfig({ ...CONFIG, miloLibs });
   await loadArea();
-  loadDelayed();
-  const spacing = document.querySelector('.force-three-up');
-  spacing?.classList.add('three-up');
+  await loadProfileDetails();
 }());
 
 /*

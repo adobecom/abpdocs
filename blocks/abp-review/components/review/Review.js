@@ -3,7 +3,7 @@ import {
   useEffect,
   useRef,
   useState,
-} from '../../htm-preact.js';
+} from '../../../../htm-preact/htm-preact.js';
 
 import { addToAverage } from '../../utils/utils.js';
 import sanitizeComment from '../../utils/sanitizeComment.js';
@@ -219,9 +219,8 @@ function Review({
 
   const ratings = html`
     ${displayTitle && titleComponent}
-
     <form className="hlx-Review" onSubmit=${handleSubmit}>
-      ${ratingComponent} ${displayComments && commentsComponent}
+       ${ratingComponent} ${displayComments && commentsComponent}
     </form>
 
     ${displayRatingSummary && ratingsSummaryComponent}

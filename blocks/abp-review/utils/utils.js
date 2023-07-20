@@ -11,4 +11,4 @@ const isKeyboardNavigation = (ev) =>
     ev.nativeEvent.webkitForce !== undefined &&
     ev.nativeEvent.webkitForce === 0);
 
-export { addToAverage, isKeyboardNavigation };
+export { addToAverage, isKeyboardNavigation};

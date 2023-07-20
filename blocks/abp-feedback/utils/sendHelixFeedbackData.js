@@ -2,37 +2,35 @@ const getDate = () =>
   // eslint-disable-next-line implicit-arrow-linebreak
   new Date().toISOString().replace(/[TZ]/g, ' ').split('.')[0].trim();
 
-const sendHelixData = ({
-  comment, lang, rating, postUrl, visitorId, page, timeSpentInSeconds, profileDetails, useCase,
+const sendFeedbackData = ({
+  comment, scope, option, url, timeSpentInSeconds, profileDetails, useCase, page,
 } = {}) => {
   const data = [
     { name: 'Timestamp', value: getDate() },
-    { name: 'Rating', value: rating },
   ];
-
   if (comment) {
     data.push({ name: 'Comment', value: comment });
   }
 
-  if (lang) {
-    data.push({ name: 'Locale', value: lang });
+  if (scope) {
+    data.push({ name: 'Scope', value: scope });
   }
 
-  if (visitorId) {
-    data.push({ name: 'VisitorId', value: visitorId });
+  if (option) {
+    data.push({ name: 'FeedbackOption', value: option });
+  }
+  if (timeSpentInSeconds) {
+    data.push({ name: 'TimeSpentInSeconds', value: timeSpentInSeconds });
   }
 
   if (page) {
     data.push({ name: 'Page', value: page });
   }
 
-  if (timeSpentInSeconds) {
-    data.push({ name: 'TimeSpentInSeconds', value: timeSpentInSeconds });
-  }
-
   if (useCase) {
     data.push({ name: 'Use Case', value: useCase });
   }
+
   if (profileDetails) {
     const { name, email } = profileDetails;
     if (name) {
@@ -45,11 +43,11 @@ const sendHelixData = ({
 
   const body = { data };
 
-  fetch(postUrl, {
+  fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
   });
 };
 
-export default sendHelixData;
+export default sendFeedbackData;

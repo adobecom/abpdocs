@@ -1,4 +1,4 @@
-import { html } from '../../htm-preact.js';
+import { html } from '../../../../htm-preact/htm-preact.js';
 
 function RatingSummary({
   averageRating = 0,
