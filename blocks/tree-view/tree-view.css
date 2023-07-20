@@ -5,6 +5,10 @@
   top: 100px;
 }
 
+.fragment > .section > .tree-view {
+  position: fixed;
+}
+
 .tree-view .title {
   text-transform: none !important;
   font-weight: bold;
