@@ -1,8 +1,4 @@
-import {
-  html,
-  useState,
-  useEffect,
-} from '../htm-preact.js';
+import { useEffect, useState, html } from '../../../../htm-preact/htm-preact.js';
 
 // eslint-disable-next-line no-unused-vars
 const Controls = ({ previousButtonText, nextButtonText }) => {
