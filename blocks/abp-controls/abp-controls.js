@@ -1,4 +1,4 @@
-import { html, render } from '../../../../htm-preact/htm-preact.js';
+import { html, render } from '../../htm-preact/htm-preact.js';
 import Controls from './components/Controls.js';
 
 export function loadStyle(href, callback) {
