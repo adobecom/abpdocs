@@ -374,3 +374,9 @@ code div {
 .code div {
   margin:0;
 }
+
+@media screen and (min-width: 64rem) {
+    .section .code {
+        width: 50vw;
+    }
+}
