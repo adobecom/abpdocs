@@ -194,6 +194,10 @@ const init = async (el) => {
       subListItem.role = 'presentation';
     });
   }
+
+  if(el.parentElement.parentElement.className === 'fragment'){
+    el.parentElement.style.height= '100vh'
+  }
 };
 
 export default init;
