@@ -194,9 +194,28 @@ const init = async (el) => {
       subListItem.role = 'presentation';
     });
   }
+  
+  function debounce(func){
+    let timer;
+    return function(event){
+      if(timer) clearTimeout(timer);
+      timer = setTimeout(func,100,event);
+    };
+  }
 
   if(el.parentElement.parentElement.className === 'fragment'){
-    el.parentElement.style.height= '100vh'
+
+    setTimeout(() => {
+      const contentSectionHeight = document.getElementsByClassName('content')[0].offsetHeight
+      const vhValue = 100 * contentSectionHeight / window.innerHeight
+      el.parentElement.style.height= vhValue +'vh'
+    }, "500");
+  
+    window.addEventListener('resize', debounce(function() {
+      const contentSectionHeight = document.getElementsByClassName('content')[0].offsetHeight
+      const vhValue = 100 * contentSectionHeight / window.innerHeight
+      el.parentElement.style.height= vhValue +'vh'
+     }));
   }
 };
 
