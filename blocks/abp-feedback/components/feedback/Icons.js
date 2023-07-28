@@ -54,21 +54,21 @@ const INACTIVE_PLAY_BOOK_ICON = html`
 
 const separatorComponent = html`<div className='hlx-scope-border-right'/>`;
 
-function Icons({ handleIconClick, scope }) {
+function Icons({ handleIconClick, scope, useCaseName }) {
   return html`
     <div className='hlx-icons'>
-      <div className=${scope === 'page' ? 'hlx-icon hlx-scope-border-bottom' : 'hlx-icon'}>
-        <span onClick=${() => handleIconClick('page')}>${(scope === 'page' || scope === '') ? ACTIVE_PAGE_ICON : INACTIVE_PAGE_ICON}</span>
+      <div className=${scope === 'page' ? 'hlx-icon hlx-scope-border-bottom' : 'hlx-icon'} onClick=${() => handleIconClick('page')}>
+        <span className='icon'>${(scope === 'page' || scope === '') ? ACTIVE_PAGE_ICON : INACTIVE_PAGE_ICON}</span>
         <span className=${scope === 'page' ? 'hlx-sub-heading hlx-scope-margin' : 'hlx-sub-heading'}> This page </span>
       </div>
-      ${(scope === 'page' || scope === 'play') && separatorComponent}
-      <div className=${scope === 'play' ? 'hlx-icon hlx-scope-border-bottom' : 'hlx-icon'}>
-        <span onClick=${() => handleIconClick('play')}>${(scope === 'play' || scope === '') ? ACTIVE_PLAY_ICON : INACTIVE_PLAY_ICON}</span>
-        <span className=${scope === 'play' ? 'hlx-sub-heading hlx-scope-margin' : 'hlx-sub-heading'}> Use Case Name </span>
+      ${(scope === 'page' || scope === 'use-case') && separatorComponent}
+      <div className=${scope === 'use-case' ? 'hlx-icon hlx-scope-border-bottom' : 'hlx-icon'} onClick=${() => handleIconClick('use-case')}>
+        <span className='icon'>${(scope === 'use-case' || scope === '') ? ACTIVE_PLAY_ICON : INACTIVE_PLAY_ICON}</span>
+        <span className=${scope === 'use-case' ? 'hlx-sub-heading hlx-scope-margin' : 'hlx-sub-heading'}>${useCaseName}</span>
       </div>
-      ${(scope === 'playbook' || scope === 'play') && separatorComponent}
-      <div className=${scope === 'playbook' ? 'hlx-icon hlx-scope-border-bottom' : 'hlx-icon'}>
-        <span onClick=${() => handleIconClick('playbook')}>${(scope === 'playbook' || scope === '') ? ACTIVE_PLAY_BOOK_ICON : INACTIVE_PLAY_BOOK_ICON}</span>
+      ${(scope === 'playbook' || scope === 'use-case') && separatorComponent}
+      <div className=${scope === 'playbook' ? 'hlx-icon hlx-scope-border-bottom' : 'hlx-icon'} onClick=${() => handleIconClick('playbook')}>
+        <span className='icon'>${(scope === 'playbook' || scope === '') ? ACTIVE_PLAY_BOOK_ICON : INACTIVE_PLAY_BOOK_ICON}</span>
         <span className=${scope === 'playbook' ? 'hlx-sub-heading hlx-playbook-margin hlx-scope-margin' : 'hlx-sub-heading hlx-playbook-margin'}> Playbook Name </span>
       </div>
     </div>
