@@ -115,7 +115,8 @@ function Feedback({
   const iconsComponent = html`
       <${Icons}
         handleIconClick=${handleIconClick} 
-        scope=${scope}/>
+        scope=${scope}
+        useCaseName=${getuseCaseText(document)}/>
       `;
 
   const thankYouComponent = html`
