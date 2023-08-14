@@ -10,7 +10,7 @@ import Comment from './Comment.js';
 import Icons from './Icons.js';
 import sendFeedbackData from '../../utils/sendHelixFeedbackData.js';
 import sessionStorageUtils from '../../../utils/sessionStorageUtils.js';
-import getuseCaseText from '../../../utils/utils.js';
+import { getUseCaseText } from '../../../utils/utils.js';
 
 const defaultStrings = {
   feedbackCommentPlaceholder: 'Please type your feedback here!',
@@ -92,7 +92,7 @@ function Feedback({
       url,
       timeSpentInSeconds: Math.abs(new Date() - loginDate) / 1000,
       profileDetails,
-      useCase: getuseCaseText(document),
+      useCase: getUseCaseText(document),
       page: location,
     });
     setDisplayThankYou(true);
@@ -116,7 +116,7 @@ function Feedback({
       <${Icons}
         handleIconClick=${handleIconClick} 
         scope=${scope}
-        useCaseName=${getuseCaseText(document)}/>
+        useCaseName=${getUseCaseText(document)}/>
       `;
 
   const thankYouComponent = html`

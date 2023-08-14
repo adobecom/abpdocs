@@ -3,9 +3,14 @@ const getBreadCrumbsUseCase = (document) => {
   return lis ? lis[lis.length - 1].textContent : '';
 };
 
-const getuseCaseText = (document) => {
+const getUseCaseText = (document) => {
   const useCase = document.querySelector('div.tree-view .title')?.textContent;
   return useCase || getBreadCrumbsUseCase(document);
 };
 
-export default getuseCaseText;
+const getPlaybookText = (document) => {
+  const useCase = document.querySelector('div.tree-view .title')?.textContent;
+  return useCase || getBreadCrumbsUseCase(document);
+};
+
+export {getUseCaseText, getPlaybookText};

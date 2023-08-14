@@ -64,12 +64,12 @@ function Icons({ handleIconClick, scope, useCaseName }) {
       ${(scope === 'page' || scope === 'use-case') && separatorComponent}
       <div className=${scope === 'use-case' ? 'hlx-icon hlx-scope-border-bottom' : 'hlx-icon'} onClick=${() => handleIconClick('use-case')}>
         <span className='icon'>${(scope === 'use-case' || scope === '') ? ACTIVE_PLAY_ICON : INACTIVE_PLAY_ICON}</span>
-        <span className=${scope === 'use-case' ? 'hlx-sub-heading hlx-scope-margin' : 'hlx-sub-heading'}>${useCaseName}</span>
+        <span className=${scope === 'use-case' ? 'hlx-sub-heading hlx-scope-margin' : 'hlx-sub-heading'}>Use Case: ${useCaseName}</span>
       </div>
       ${(scope === 'playbook' || scope === 'use-case') && separatorComponent}
       <div className=${scope === 'playbook' ? 'hlx-icon hlx-scope-border-bottom' : 'hlx-icon'} onClick=${() => handleIconClick('playbook')}>
         <span className='icon'>${(scope === 'playbook' || scope === '') ? ACTIVE_PLAY_BOOK_ICON : INACTIVE_PLAY_BOOK_ICON}</span>
-        <span className=${scope === 'playbook' ? 'hlx-sub-heading hlx-playbook-margin hlx-scope-margin' : 'hlx-sub-heading hlx-playbook-margin'}> Playbook Name </span>
+        <span className=${scope === 'playbook' ? 'hlx-sub-heading hlx-playbook-margin hlx-scope-margin' : 'hlx-sub-heading hlx-playbook-margin'}> Playbook: Playbook Name </span>
       </div>
     </div>
   `;

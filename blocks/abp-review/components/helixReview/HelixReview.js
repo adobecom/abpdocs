@@ -2,7 +2,7 @@ import { useState, html } from '../../../../htm-preact/htm-preact.js';
 import sendHelixData from '../../utils/sendHelixData.js';
 import Review from '../review/Review.js';
 import sessionStorageUtils from '../../../utils/sessionStorageUtils.js';
-import getuseCaseText from '../../../utils/utils.js';
+import { getUseCaseText } from '../../../utils/utils.js';
 
 // Helix Review component
 const HelixReview = ({
@@ -39,7 +39,7 @@ const HelixReview = ({
       page: location,
       timeSpentInSeconds: Math.abs(new Date() - loginDate) / 1000,
       profileDetails,
-      useCase: getuseCaseText(document),
+      useCase: getUseCaseText(document),
     });
 
     if (onRatingSetCallback) {

@@ -141,7 +141,7 @@
   font-size: 28px;
   font-weight: bold;
   position: relative;
-  left: 3%;
+  left: 2%;
 }
 
 .floating-button-div {
@@ -218,7 +218,7 @@
   resize: none
 }
 .hlx-sub-heading {
-  text-decoration: underline;
+ 
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -228,6 +228,10 @@
   display: flex;
   flex-direction: column;
   padding: 30px;
+}
+
+.hlx-icon:hover{
+  text-decoration: underline;
 }
 
 .hlx-playbook-margin{
