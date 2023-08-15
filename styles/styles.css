@@ -11,6 +11,11 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
+
+ .columns.columns-table {
+  font-size: 16px;
+}
+
 .columns.table > .row {
   align-items: flex-start !important;
   padding-bottom: 0 !important;
@@ -45,4 +50,12 @@
 
 .col:nth-last-child(1) {
   border: 0;
+}
+
+span.icon.icon-info {
+   margin-left: 3px !important ;
+   }
+
+.columns.columns-table > .row:first-child  {
+    color: gray ;
 }
