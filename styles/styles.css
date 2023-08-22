@@ -59,3 +59,24 @@ span.icon.icon-info {
 .columns.columns-table > .row:first-child  {
     color: gray ;
 }
+
+.gnav-search-results .article-card-body h3 {
+    min-height: inherit;
+}
+
+.gnav-search-results > ul li > a p {
+	font-weight: normal;
+}
+
+.gnav-search-results .article-card .article-card-image {
+	height: 0px;
+}
+
+.gnav-search-results .article-card .article-card-image img {
+	display: none;
+	height: 0px;
+}
+
+.columns.columns-table > .row:first-child {
+ text-transform: none !important;
+}
