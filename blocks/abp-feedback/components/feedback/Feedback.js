@@ -17,7 +17,7 @@ const defaultStrings = {
   feedbackScopes: 'Page, Use-case, Playbook',
   feedbackTitle: 'Your feedback is very important to us, tell us what you think!',
   postUrl: '/data/feedback',
-  subTitle: 'Send feedback about',
+  subTitle: 'Tell us what you think',
   thankYou: 'Thank you for your feedback',
 };
 

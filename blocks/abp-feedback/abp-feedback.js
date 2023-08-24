@@ -76,7 +76,7 @@ const init = async (el) => {
   feedbackDiv.setAttribute('class', 'floating-button-div');
   const feedbackLauncher = document.createElement('input');
   feedbackLauncher.type = 'button';
-  feedbackLauncher.value = 'Feedback';
+  feedbackLauncher.value = 'Help us improve';
   feedbackLauncher.class = 'feedback-launch';
   feedbackLauncher.setAttribute('class', 'feedback-launch');
   feedbackDiv.appendChild(feedbackLauncher);
