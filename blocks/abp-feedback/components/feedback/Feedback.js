@@ -7,7 +7,6 @@ import Header from './Header.js';
 import Options from './Options.js';
 import Scope from './Scope.js';
 import Comment from './Comment.js';
-import Icons from './Icons.js';
 import sendFeedbackData from '../../utils/sendHelixFeedbackData.js';
 import sessionStorageUtils from '../../../utils/sessionStorageUtils.js';
 import { getUseCaseText } from '../../../utils/utils.js';
@@ -28,8 +27,6 @@ function Feedback({
 }) {
   const [displayThankYou, setDisplayThankYou] = useState(false);
   const [keyboardFocusIndex, setKeyboardFocusIndex] = useState(0);
-  const [showOptions, setShowOptions] = useState(false);
-  const [showComment, setShowComment] = useState(false);
   const [option, setOption] = useState('');
   const [scope, setScope] = useState('');
   const [comment, setComment] = useState('');
@@ -46,15 +43,9 @@ function Feedback({
     return formatLabels;
   };
 
-  const handleIconClick = (scopeValue) => {
-    setScope(scopeValue);
-    setShowOptions(true);
-  };
-
   const handleClick = (index, ev) => {
     if (ev.target.value) {
       setScope(ev.target.value);
-      setShowOptions(true);
       return;
     }
     setKeyboardFocusIndex(null);
@@ -63,7 +54,6 @@ function Feedback({
   const handleOptionChange = (e) => {
     if (e.target.value) {
       setOption(e.target.value);
-      setShowComment(true);
     }
   };
 
@@ -112,13 +102,6 @@ function Feedback({
     />
   `;
 
-  const iconsComponent = html`
-      <${Icons}
-        handleIconClick=${handleIconClick} 
-        scope=${scope}
-        useCaseName=${getUseCaseText(document)}/>
-      `;
-
   const thankYouComponent = html`
     <div className="hlx-feedback-submit-response">${strings.thankYou}</div>
   `;
@@ -163,13 +146,11 @@ function Feedback({
         ${headerComponent}
         <span class="close" onclick=${handleClose}>X</span>
     </div>
-        ${iconsComponent}
     <div class="hlx-feedback-options-comment">
       <div class='hlx-feedback-all-options'>
-          ${showOptions && feedbackOptions.map((optionItem) => html`${optionItem}`)}
+          ${feedbackOptions.map((optionItem) => html`${optionItem}`)}
       </div> 
-      
-        ${showOptions && showComment && commentComponent}
+        ${commentComponent}
     </div>`;
 
   const feedbackForm = html`
