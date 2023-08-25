@@ -22,10 +22,10 @@
   padding-top: 0 !important;
 }
 
-.columns.table > .row:first-child {
+.columns.table > .row:first-child, .columns.columns-table > .row:first-child {
   text-transform: none !important;
   letter-spacing: 0 !important;
-  font-size: 14px !important;
+  font-size: var(--type-body-S-size) !important;
 }
 
 .row:nth-child(odd) {
@@ -57,7 +57,7 @@ span.icon.icon-info {
    }
 
 .columns.columns-table > .row:first-child  {
-    color: gray ;
+     background-color: var(--color-gray-100) ;
 }
 
 .gnav-search-results .article-card-body h3 {
