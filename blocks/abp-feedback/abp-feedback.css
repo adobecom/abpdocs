@@ -37,13 +37,23 @@
     flex-direction: row;
     justify-content: center;
   }
+   .feedback-modal .close {
+    margin-left: 59%;
+  } 
 }
-
 
 @media (min-width: 600px) {
   .dialog-modal {
     max-width: 80vw;
     width: fit-content;
+  }
+}
+
+@media (max-width:1800px)  
+ {
+  .feedback-topsection {
+    margin-left: 0%;
+    
   }
 }
 
@@ -58,14 +68,16 @@
 
 .feedback-topsection {
   display: flex;
-  justify-content: center;
+  
   margin-top: 0;
+  margin-left: 0%;
 }
 
 .hlx-FeedbackWrapper .hlx-feedbackTitle {
   font-size: 28px;
   margin-top: auto;
   cursor: default;
+  margin-left: 1%;
  }
 
 .close:hover,
@@ -117,6 +129,7 @@
   text-align: right;
   padding: 1px 10px;
   cursor: pointer;
+  margin-top: -0.3rem;
 }
 
 .feedbackSubmit {
@@ -136,12 +149,12 @@
 
 .feedback-modal .close {
   color: #000;
-  margin-left: 60%;
+  margin-left: 61%;
   top: auto;
   font-size: 28px;
   font-weight: bold;
   position: relative;
-  left: 2%;
+  
 }
 
 .floating-button-div {
@@ -173,6 +186,7 @@
   padding: 5px;
   width: 100%;
   cursor: pointer;
+  margin-bottom: 0px;
 }
 
 .hlx-feedback-grey {
