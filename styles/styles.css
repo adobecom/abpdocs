@@ -80,3 +80,7 @@ span.icon.icon-info {
 .columns.columns-table > .row:first-child {
  text-transform: none !important;
 }
+
+span.icon.margin-right {
+  margin-right: 2px !important;
+}
