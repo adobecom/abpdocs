@@ -1,6 +1,6 @@
 import { getLibs } from '../../scripts/utils.js';
 
-const BACOM_HOSTS = ['localhost', '--abpdocs--adobecom.hlx.page', '--abpdocs--adobecom.hlx.live', 'abp.adobe.com'];
+const BACOM_HOSTS = ['localhost', '--abpdocs--adobecom.hlx.page', '--abpdocs--adobecom.hlx.live', '--abpdocs--adobecom.aem.page', '--abpdocs--adobecom.aem.live', 'abp.adobe.com'];
 
 export const isCurrentPage = (link) => {
   const currentPath = window.location.pathname.replace('.html', '');
