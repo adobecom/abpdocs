@@ -1,6 +1,7 @@
 {
   "project": "Adobe Business Platform Docs",
   "host": "abp.adobe.com",
+  "trustedHosts": ["milo.adobe.com"],
   "plugins": [
     {
       "id": "library",
